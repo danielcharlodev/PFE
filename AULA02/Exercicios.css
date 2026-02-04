@@ -1,0 +1,23 @@
+body {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#botao {
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+
+#celsius {
+    padding: 20px;
+    border-radius: 90px;
+}
+::placeholder {
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
