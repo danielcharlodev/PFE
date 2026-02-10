@@ -21,3 +21,30 @@ body {
     color: rgb(0, 0, 0);
     text-align: center;
 }
+
+    :root{ --cor: #2563eb; }
+
+    body{ font-family: Arial, sans-serif; margin: 20px; }
+    .container{ display: flex; gap: 20px; align-items: flex-start; }
+
+    .form{ width: 260px; }
+    label{ display:block; margin-top: 10px; }
+    input, select{ width:100%; padding:8px; margin-top:4px; }
+
+    .card{
+      width: 320px;
+      height: 180px;
+      border-radius: 12px;
+      box-shadow: 0 8px 18px rgba(0,0,0,.2);
+      background: var(--cor);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 6px;
+      margin-left: 50px;
+    }
+    .nome{ font-size: 22px; font-weight: bold; }
+    .cargo{ font-size: 14px; opacity: .9; }
