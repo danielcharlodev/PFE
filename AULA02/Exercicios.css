@@ -29,7 +29,8 @@ body {
 
     .form{ width: 260px; }
     label{ display:block; margin-top: 10px; }
-    input, select{ width:100%; padding:8px; margin-top:4px; }
+    input{ width:90%; padding:8px; margin-top:4px; }
+    select{ width:98%; padding:8px; margin-top:4px; }
 
     .card{
       width: 320px;
