@@ -1,18 +1,15 @@
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 98vh;
+    display: grid;
+    place-items: center;
 }
 
 .nome {
     height: 600px;
     width: 800px;
     background-color: aquamarine;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    place-items: center;
 }
 
 .camada1 {
@@ -20,9 +17,9 @@ body {
     width: 700px;
     background-color: burlywood;
     border: 2px solid black;
-    justify-content: space-around;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
 }
 
 .camada2 {
@@ -30,9 +27,9 @@ body {
     width: 700px;
     background-color: chartreuse;
     border: 2px solid black;
-    justify-content: space-around;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
 }
 
 .camada3 {
@@ -40,9 +37,9 @@ body {
     width: 700px;
     background-color: cadetblue;
     border: 2px solid black;
-    justify-content: space-around;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
 }
 
 .subcamada {
@@ -50,7 +47,4 @@ body {
     width: 90px;
     background-color: coral;
     border: 2px solid black;
-    justify-content: center;
-    display: flex;
-    align-items: center;
 }
