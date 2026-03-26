@@ -1,219 +1,47 @@
 body {
-    height: 100vh;
-    background-color: black;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0px;
 }
 
 .container {
     display: flex;
+    flex-direction: row;
+}
+.sidebar {
+    background-color: aqua;
     height: 100vh;
+    width: 220px;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
-.nav {
-    background-color: rgb(0, 0, 0);
-    height: 100vh;
-    width: 250px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 20px;
+.main {
+    background-color: grey;
+    height: 800px;
+    width: 770px;
+    margin-left: 220px;
 }
-
-i {
-    color: rgb(255, 255, 255);
-}
-
-.nav i {
-    font-size: 26px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 18px;
-}
-
-#instagram {
-    margin-top: 20px;
-    font-size: 27px;
-}
-
-#menu {
-    margin-top: 15px;
-}
-
-#meta {
-    margin-bottom: 30px;
-    margin-top: 22px;
-}
-
-.main-area {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    padding-top: 20px;
-    background-color: #000;
+.stories {
+    background-color: blueviolet;
+    height: 130px;
+    width: 620px;
+    margin-left: 75px;
 }
 
 .feed {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    background-color: #000;
-}
-
-.feed-container {
-    width: 470px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    padding-top: 20px;
-}
-
-.stories {
-    width: 100%;
-    height: 120px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    background-color: #000000;
-}
-
-.stories-perfil {
-    width: 80px;
-    height: 80px;
-    background-color: white;
-    border-radius: 50%;
-}
-
-.posts {
-    width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.post {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    color: white;
+.feedperfil {
+    background-color: black;
+    height: 30px;
+    width: 390px;
 }
 
-.topo-post {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.foto-perfil img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.info-post {
-    display: flex;
-    flex-direction: column;
-}
-
-.linha-nome {
-    display: flex;
-    gap: 6px;
-    align-items: center;
-}
-
-.nome {
-    font-weight: bold;
-}
-
-.tempo {
-    color: gray;
-    font-size: 14px;
-}
-
-.localizacao {
-    font-size: 13px;
-}
-
-.imagem-post {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    object-fit: cover;
-}
-
-.acoes {
-    display: flex;
-    gap: 12px;
-    margin-top: 8px;
-}
-
-.acoes i {
-    font-size: 22px;
-    cursor: pointer;
-}
-
-.sugestoes {
-    width: 320px;
-    color: white;
-    padding-top: 18px;
-    margin-right: 400px;
-}
-
-.perfil-atual {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.perfil-foto {
-    width: 56px;
-    height: 56px;
-    background: white;
-    border-radius: 50%;
-}
-
-.perfil-foto.pequeno {
-    width: 32px;
-    height: 32px;
-}
-
-.perfil-nome {
-    font-weight: bold;
-}
-
-.perfil-sub {
-    font-size: 13px;
-    color: gray;
-}
-
-.sugestao {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
-    width: 320px;
-    color: white;
-}
-
-.sugestao a {
-    margin-left: auto;
-    color: #0095f6;
-    text-decoration: none;
-    font-size: 13px;
+.feedimg {
+    background-color: chartreuse;
+    height: 500px;
+    width: 400px;
+    margin-top: 75px;
 }
