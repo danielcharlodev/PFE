@@ -1,5 +1,6 @@
 body {
     margin: 0px;
+    background-color: black;
 }
 
 .container {
@@ -9,39 +10,73 @@ body {
 .sidebar {
     background-color: aqua;
     height: 100vh;
-    width: 220px;
+    width: 225px;
     position: fixed;
     top: 0;
     left: 0;
-}
+}   
 
 .main {
     background-color: grey;
-    height: 800px;
-    width: 770px;
-    margin-left: 220px;
+    height: 1200px;
+    width: 630px;
+    margin-left: 445px;
 }
 .stories {
     background-color: blueviolet;
     height: 130px;
-    width: 620px;
-    margin-left: 75px;
+    width: 630px;
+    
 }
 
 .feed {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .feedperfil {
     background-color: black;
-    height: 30px;
-    width: 390px;
+    height: 50px;
+    width: 470px;
+    margin-top: 30px;
 }
 
 .feedimg {
     background-color: chartreuse;
-    height: 500px;
-    width: 400px;
-    margin-top: 75px;
+    height: 600px;
+    width: 468px;
+}
+
+.feeddesc {
+    background-color: black;
+    height: 50px;
+    width: 470px;
+}
+
+.right {
+    margin-left: 80px;
+}
+.sugestao {
+    background-color: crimson;
+    height: 440px;
+    width: 330px;
+}
+
+.sugestaodesc {
+    background-color: aliceblue;
+    height: 80px;
+    width: 330px;
+}
+
+.mensagem {
+    background-color: rgb(39, 37, 37);
+    height: 58px;
+    width: 255px;
+    border-radius: 30px;
+    border-color: aliceblue;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
 }
