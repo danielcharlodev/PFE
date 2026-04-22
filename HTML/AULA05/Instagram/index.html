@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Instagram</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- ===== SIDEBAR ESQUERDA ===== -->
+  <nav class="sidebar">
+
+    <!-- Logo do Instagram (ícone apenas, sem texto quando recolhida) -->
+    <div class="sidebar-logo">
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+
+    <ul class="sidebar-menu">
+
+      <li class="menu-item active">
+        <i class="fa-solid fa-house"></i> <!-- ícone sólido da casa -->
+        <span class="nav-label">Página inicial</span> <!-- texto que aparece quando sidebar expande -->
+      </li>
+      <li class="menu-item">
+        <i class="fa-solid fa-circle-play"></i> <!-- ícone de play/reels -->
+        <span class="nav-label">Reels</span>
+      </li>
+      <li class="menu-item">
+        <i class="fa-solid fa-paper-plane"></i> <!-- ícone de mensagem/avião -->
+        <span class="nav-label">Mensagens</span>
+      </li>
+      <li class="menu-item">
+        <i class="fa-solid fa-magnifying-glass"></i> <!-- lupa de pesquisa -->
+        <span class="nav-label">Pesquisa</span>
+      </li>
+      <li class="menu-item">
+        <i class="fa-solid fa-compass"></i> <!-- bússola do explorar -->
+        <span class="nav-label">Explorar</span>
+      </li>
+      <li class="menu-item">
+        <i class="fa-regular fa-heart"></i> <!-- coração vazio (notificações) -->
+        <span class="nav-label">Notificações</span>
+      </li>
+      <li class="menu-item">
+        <i class="fa-solid fa-square-plus"></i> <!-- quadrado com + (criar post) -->
+        <span class="nav-label">Criar</span>
+      </li>
+      <li class="menu-item">
+        <i class="fa-solid fa-circle-user"></i> <!-- círculo com usuário (perfil) -->
+        <span class="nav-label">Perfil</span>
+      </li>
+    </ul>
+
+    <div class="sidebar-bottom">
+      <div class="menu-item">
+        <i class="fa-solid fa-bars"></i> <!-- ícone de hambúrguer/menu -->
+        <span class="nav-label">Mais</span>
+      </div>
+      <div class="menu-item">
+        <i class="fa-brands fa-meta" style="font-size:18px"></i>
+        <span class="nav-label">Também da Meta</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== COLUNA CENTRAL (FEED + STORIES) ===== -->
+  <main class="main-center">
+
+    <!-- ===== SEÇÃO DE STORIES (HISTÓRIAS) ===== -->
+    <div class="stories-wrap">
+      <div class="stories-inner">
+
+        <button class="story-arrow story-arrow--prev" onclick="scrollStories(-1)" aria-label="Story anterior">
+          <i class="fa-solid fa-chevron-left"></i> <!-- ícone de seta esquerda -->
+        </button>
+
+        <div class="stories-track">
+          <div class="stories-list" id="storiesList">
+            <div class="story">
+              <div class="story-ring story-ring--gradient">
+                <img src="img/Neymar.jpg" alt="neymar10" />
+              </div>
+              <span>neymarJR</span> <!-- Nome do usuário (truncado com ellipsis se muito longo) -->
+            </div>
+
+            <!-- Demais stories seguem o mesmo padrão -->
+            <div class="story">
+              <div class="story-ring story-ring--gradient">
+                <img src="img/ronaldo.jpg" alt="fenomeno9" />
+              </div>
+              <span>fenomeno9</span>
+            </div>
+            <div class="story">
+              <div class="story-ring story-ring--gradient">
+                <img src="img/tom hardy.jpg" alt="tomhardy" />
+              </div>
+              <span>tomhardy</span>
+            </div>
+            <div class="story">
+              <div class="story-ring story-ring--gradient">
+                <img src="img/avicii.jpg" alt="avicii" />
+              </div>
+              <span>avicii</span>
+            </div>
+            <div class="story">
+              <div class="story-ring story-ring--gradient">
+                <img src="img/chapolin.jpeg" alt="chapolin" />
+              </div>
+              <span>chapolin</span>
+            </div>
+            <div class="story">
+              <div class="story-ring story-ring--gradient">
+                <img src="img/rasputia.jpg" alt="rasputia" />
+              </div>
+              <span>rasputia</span>
+            </div>
+            <div class="story">
+              <div class="story-ring story-ring--gradient">
+                <img src="img/eneas.jpg" alt="eneas_br" />
+              </div>
+              <span>eneas_br</span>
+            </div>
+            <div class="story">
+              <div class="story-ring story-ring--gradient">
+                <img src="img/crazy frog.jpg" alt="crazyfrog" />
+              </div>
+              <span>crazyfrog</span>
+            </div>
+            <div class="story">
+              <div class="story-ring story-ring--gradient">
+                <img src="img/mario botion.jpg" alt="mariobotion" />
+              </div>
+              <span>mariobotion</span>
+            </div>
+            <div class="story">
+              <div class="story-ring story-ring--gradient">
+                <img src="img/tck.jpg" alt="tck_oficial" />
+              </div>
+              <span>BOMBATCKUDO</span>
+            </div>
+            <div class="story">
+              <div class="story-ring story-ring--gradient">
+                <img src="img/67.jpg" alt="67_oficial" />
+              </div>
+              <span>67_oficial</span>
+            </div>
+            <div class="story">
+              <div class="story-ring story-ring--gradient">
+                <img src="img/p.diddy.jpg" alt="pdiddy" />
+              </div>
+              <span>pdiddy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botão de navegação DIREITA para stories -->
+        <button class="story-arrow story-arrow--next" onclick="scrollStories(1)" aria-label="Próximo story">
+          <i class="fa-solid fa-chevron-right"></i> <!-- ícone de seta direita -->
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== FEED (POSTS) ===== -->
+    <div class="feed">
+
+      <!-- ===== POST 1 - Neymar (imagem estática) ===== -->
+      <div class="post">
+
+        <!-- CABEÇALHO DO POST -->
+        <div class="post-header">
+          <div class="post-user">
+            <div class="post-avatar ring">
+              <img src="img/Neymar.jpg" alt="neymar10" />
+            </div>
+            <div class="post-meta">
+              <div class="post-username">
+                neymarJR
+                <span class="dot">·</span> <!-- Ponto separador visual -->
+                <span class="post-time-inline">2 h</span> <!-- Tempo relativo do post -->
+              </div>
+              <div class="post-location">Santos, SP</div> <!-- Localização do post -->
+            </div>
+          </div>
+          <div class="post-header-right">
+            <span class="btn-follow-inline">Seguir</span> <!-- Botão seguir inline -->
+            <i class="fa-solid fa-ellipsis post-more"></i> <!-- Ícone de 3 pontos (mais opções) -->
+          </div>
+        </div>
+
+        <!-- IMAGEM DO POST -->
+        <div class="post-image">
+          <img src="img/neymarPost.jpg" alt="Post Neymar" />
+        </div>
+
+        <!-- AÇÕES DO POST (curtir, comentar, compartilhar, salvar) -->
+        <div class="post-actions">
+          <div class="actions-left">
+            <div class="action-item">
+              <i class="fa-regular fa-heart" title="Curtir"></i> <!-- Ícone coração vazio -->
+              <span class="action-count">893,4 mil</span> <!-- Contador de curtidas -->
+            </div>
+            <div class="action-item">
+              <i class="fa-regular fa-comment" title="Comentar"></i> <!-- Ícone de comentário -->
+              <span class="action-count">209,2 mil</span> <!-- Contador de comentários -->
+            </div>
+            <i class="fa-regular fa-paper-plane" title="Compartilhar"></i> <!-- Compartilhar -->
+          </div>
+          <i class="fa-regular fa-bookmark" title="Salvar"></i> <!-- Salvar post -->
+        </div>
+
+        <!-- LEGENDA DO POST -->
+        <div class="post-caption">
+          <strong>neymarJR</strong> Dia de jogo 💪⚽
+          <span class="hashtag">#futebol</span> <!-- Hashtags estilizadas -->
+          <span class="hashtag">#jogo</span>
+        </div>
+      </div>
+
+      <!-- ===== POST 2 - Ronaldo Fenômeno (VÍDEO) ===== -->
+      <div class="post">
+        <div class="post-header">
+          <div class="post-user">
+            <div class="post-avatar ring">
+              <img src="img/ronaldo.jpg" alt="fenomeno9" />
+            </div>
+            <div class="post-meta">
+              <div class="post-username">RFenomeno <span class="dot">·</span> <span class="post-time-inline">5 h</span>
+              </div>
+              <div class="post-location">Beco sem Saida - SP</div>
+            </div>
+          </div>
+          <div class="post-header-right">
+            <span class="btn-follow-inline">Seguir</span>
+            <i class="fa-solid fa-ellipsis post-more"></i>
+          </div>
+        </div>
+
+        <div class="post-image">
+          <video
+            src="img/FDownloader.Net_AQM8eOehrqL4KxBS-EOEKZWygd5BrJ615WVOuUwXcMnsrASlhCk5DGej8ynRwEMUIXdoXhHm9ciSSLTaBb5-o1DUH_FVM0WkBTVtni04TvfO9w_720p_(HD).mp4"
+            autoplay muted loop playsinline
+            style="width:100%;height:100%;object-fit:cover;border-radius:4px;display:block;"></video>
+        </div>
+
+        <div class="post-actions">
+          <div class="actions-left">
+            <div class="action-item">
+              <i class="fa-regular fa-heart" title="Curtir"></i>
+              <span class="action-count">98,2 mil</span>
+            </div>
+            <div class="action-item">
+              <i class="fa-regular fa-comment" title="Comentar"></i>
+              <span class="action-count">1,2 mil</span>
+            </div>
+            <i class="fa-regular fa-paper-plane" title="Compartilhar"></i>
+          </div>
+          <i class="fa-regular fa-bookmark" title="Salvar"></i>
+        </div>
+        <div class="post-caption"><strong>RFenomeno</strong> Uma delicia! <span class="hashtag">#ronaldo</span> <span
+            class="hashtag">#r9</span> <span class="hashtag">#goat</span></div>
+      </div>
+
+      <!-- ===== POST 3 - TCK (CARROSSEL de imagens) ===== -->
+      <div class="post">
+        <div class="post-header">
+          <div class="post-user">
+            <div class="post-avatar ring">
+              <img src="img/tck.jpg" alt="tck_oficial" />
+            </div>
+            <div class="post-meta">
+              <div class="post-username">BOMBATCKUDO <span class="dot">·</span> <span class="post-time-inline">3
+                  h</span></div>
+              <div class="post-location">São Paulo, SP</div>
+            </div>
+          </div>
+          <div class="post-header-right">
+            <span class="btn-follow-inline">Seguir</span>
+            <i class="fa-solid fa-ellipsis post-more"></i>
+          </div>
+        </div>
+
+        <div class="carousel" id="carouselTck">
+
+          <div class="carousel-track" id="carouselTrackTck">
+            <!-- Cada carousel-slide é uma imagem no carrossel -->
+            <div class="carousel-slide"><img src="img/tck1.jpg" alt="tck foto 1" /></div>
+            <div class="carousel-slide"><img src="img/tck2.jpg" alt="tck foto 2" /></div>
+            <div class="carousel-slide"><img src="img/tck3.jpg" alt="tck foto 3" /></div>
+          </div>
+
+          <button class="carousel-btn carousel-btn--prev" onclick="moveCarousel('carouselTck', -1)"
+            aria-label="Anterior">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="carousel-btn carousel-btn--next" onclick="moveCarousel('carouselTck', 1)" aria-label="Próximo">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+
+          <div class="carousel-dots" id="dotsTck">
+            <span class="carousel-dot active"></span> <!-- Primeiro slide ativo -->
+            <span class="carousel-dot"></span>
+            <span class="carousel-dot"></span>
+          </div>
+
+          <!-- Contador de slides (ex: "1 / 3") -->
+          <div class="carousel-counter" id="counterTck">1 / 3</div>
+        </div>
+
+        <div class="post-actions">
+          <div class="actions-left">
+            <div class="action-item">
+              <i class="fa-regular fa-heart" title="Curtir"></i>
+              <span class="action-count">12,8 mil</span>
+            </div>
+            <div class="action-item">
+              <i class="fa-regular fa-comment" title="Comentar"></i>
+              <span class="action-count">534</span>
+            </div>
+            <i class="fa-regular fa-paper-plane" title="Compartilhar"></i>
+          </div>
+          <i class="fa-regular fa-bookmark" title="Salvar"></i>
+        </div>
+        <div class="post-caption"><strong>BOMBATCKUDO</strong> Achei esse fan no evento! <span
+            class="hashtag">#tck</span> <span class="hashtag">#trap</span></div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===== SIDEBAR DIREITA ===== -->
+  <aside class="right-sidebar">
+
+    <!-- PERFIL DO USUÁRIO LOGADO -->
+    <div class="rs-profile">
+      <div class="rs-avatar">
+        <img src="img/epaminondas.jpg" alt="epaminondas" />
+      </div>
+      <div class="rs-profile-info">
+        <strong>epaminondas</strong> <!-- Nome de usuário -->
+        <span>Epaminondas Silva</span> <!-- Nome completo -->
+      </div>
+      <span class="btn-trocar">Mudar</span> <!-- Link para trocar de conta -->
+    </div>
+
+    <!-- SEÇÃO DE SUGESTÕES -->
+    <div class="rs-suggestions-header">
+      <span>Sugestões para você</span>
+      <a href="#">Ver tudo</a> <!-- Link para ver todas sugestões -->
+    </div>
+
+    <div class="rs-suggestion">
+      <div class="rs-sug-avatar">
+        <img src="img/eneas.jpg" alt="eneas" />
+      </div>
+      <div class="rs-sug-info">
+        <strong>eneas_br</strong>
+        <span>Seguido(a) por rasputia_real</span> <!-- Texto explicativo da sugestão -->
+      </div>
+      <span class="btn-seguir">Seguir</span>
+    </div>
+
+    <div class="rs-suggestion">
+      <div class="rs-sug-avatar">
+        <img src="img/rasputia.jpg" alt="rasputia" />
+      </div>
+      <div class="rs-sug-info">
+        <strong>rasputia_real</strong>
+        <span>Novo no Instagram</span> <!-- Sugestão baseada em "novo" -->
+      </div>
+      <span class="btn-seguir">Seguir</span>
+    </div>
+
+    <div class="rs-suggestion">
+      <div class="rs-sug-avatar">
+        <img src="img/crazy frog.jpg" alt="crazyfrog" />
+      </div>
+      <div class="rs-sug-info">
+        <strong>crazyfrog</strong>
+        <span>Seguido(a) por neymarJR</span> <!-- Sugestão baseada em amigo em comum -->
+      </div>
+      <span class="btn-seguir">Seguir</span>
+    </div>
+
+    <div class="rs-suggestion">
+      <div class="rs-sug-avatar">
+        <img src="img/mario botion.jpg" alt="mariobotion" />
+      </div>
+      <div class="rs-sug-info">
+        <strong>mariobotion</strong>
+        <span>Sugerido para você</span> <!-- Sugestão genérica -->
+      </div>
+      <span class="btn-seguir">Seguir</span>
+    </div>
+
+    <div class="rs-suggestion">
+      <div class="rs-sug-avatar">
+        <img src="img/tck.jpg" alt="tck" />
+      </div>
+      <div class="rs-sug-info">
+        <strong>BOMBATCKUDO</strong>
+        <span>Seguido(a) por fenomeno9</span>
+      </div>
+      <span class="btn-seguir">Seguir</span>
+    </div>
+
+    <!-- RODAPÉ DA SIDEBAR DIREITA -->
+    <div class="rs-footer">
+      <div class="rs-footer-links">
+        Sobre · Ajuda · Imprensa · API · Carreiras · Privacidade · Termos · Localizações · Idioma · Meta Verified
+      </div>
+      <div class="rs-footer-copy">© 2026 INSTAGRAM FROM META</div> <!-- Copyright -->
+    </div>
+
+  </aside>
+
+  <!-- ===== MENSAGENS FLUTUANTES (DESKTOP) ===== -->
+  <div class="desktop-messages">
+    <i class="fa-regular fa-paper-plane"></i> <!-- Ícone de avião/mensagem -->
+    <span>Mensagens</span> <!-- Texto do componente -->
+
+    <!-- Avatares sobrepostos das últimas conversas -->
+    <div class="desktop-msg-avatars">
+      <!-- Avatares com sobreposição -->
+      <img src="img/Neymar.jpg" alt="avatar 1" />
+      <img src="img/ronaldo.jpg" alt="avatar 2" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
