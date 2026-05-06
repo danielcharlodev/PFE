@@ -106,6 +106,8 @@ function App() {
     // Ele ordena as tarefas com base na prioridade, acima eu defini um numero para cada prioridade, a função sort faz a conta e faz com que a alta vem sempre antes da media e media antes da baixa
     .sort((a, b) => prioridadeOrdem[a.priority] - prioridadeOrdem[b.priority]);
 
+    
+
   return (
     <div className="app-container">
       <header>
