@@ -6,7 +6,11 @@ function App() {
   const [eventType, setEventType] = useState("Palestra");
   const [eventList, setEventList] = useState([]);
   const [filter, setFilter] = useState("Todos");
+  // Estado que guarda o texto digitado
+  // pelo usuário no campo de pesquisa
   const [search, setSearch] = useState("");
+  // Estado que guarda a quantidade de vagas
+  // escolhida no formulário
   const [eventVagas, setEventVagas] = useState(10);
   const [showModal, setShowModal] = useState(false); // ✅ MODAL
 
@@ -24,11 +28,18 @@ function App() {
     if (!eventTitle.trim()) return;
 
     const newEvent = {
+      // ID único
       id: crypto.randomUUID(),
       title: eventTitle,
       type: eventType,
+
+      // Status inicial
       status: "Agendado",
+
+      // Data atual
       date: new Date().toLocaleDateString(),
+
+      // Quantidade de vagas escolhida
       vagas: eventVagas
     };
 
@@ -43,8 +54,8 @@ function App() {
           evt.status === "Agendado"
             ? "Em Andamento"
             : evt.status === "Em Andamento"
-            ? "Encerrado"
-            : "Agendado";
+              ? "Encerrado"
+              : "Agendado";
         return { ...evt, status: nextStatus };
       }
       return evt;
@@ -55,19 +66,32 @@ function App() {
     setEventList(eventList.filter(evt => evt.id !== id));
   };
 
+  // Função responsável por apagar todos os eventos
   const clearAllEvents = () => {
+    // Mostra uma caixa de confirmação
     const confirmacao = window.confirm("⚠️ Tem certeza que deseja limpar todo o cronograma?");
+    // Só executa se o usuário clicar em OK
     if (confirmacao) {
+       // Remove os dados salvos do navegador 
       localStorage.removeItem("@eventpulse_data");
       setEventList([]);
     }
   };
 
+  // Função responsável por diminuir vagas
   const inscreverAluno = (id) => {
+    // Atualiza a lista de eventos
+    // Percorre todos os eventos
     setEventList(eventList.map(evt => {
+      // Verifica:
+      // 1. se é o evento correto
+      // 2. se ainda possui vagas
       if (evt.id === id && (evt.vagas ?? 0) > 0) {
+        // Mantém dados antigos
+        // Diminui 1 vaga
         return { ...evt, vagas: evt.vagas - 1 };
       }
+      // Eventos não alterados continuam iguais
       return evt;
     }));
   };
@@ -79,18 +103,43 @@ function App() {
     "Encerrados": evt => evt.status === "Encerrado",
   };
 
+  // Objeto usado para definir a prioridade de cada tipo de evento
   const orderByType = {
+
+    // Workshop recebe prioridade 1
+    // então aparece primeiro
     Workshop: 1,
+
+    // Palestra recebe prioridade 2
+    // aparece depois do Workshop
     Palestra: 2,
+
+    // Painel recebe prioridade 3
+    // aparece por último
     Painel: 3,
   };
 
   const filteredEvents = eventList
     .filter(filterMap[filter])
+
+    // Filtra os eventos
     .filter(evt =>
+      // Verifica se o título do evento
+      // contém o texto digitado
       evt.title.toLowerCase().includes(search.toLowerCase())
     )
-    .sort((a, b) => (orderByType[a.type] || 99) - (orderByType[b.type] || 99));
+
+    // Ordena os eventos antes de renderizar
+    .sort((a, b) =>
+
+      // Pega o valor do tipo do evento A
+      // e subtrai do valor do evento B
+      (orderByType[a.type] || 99) -
+
+      (orderByType[b.type] || 99)
+
+      // se negativo o A sobe e se for positivo desce
+    )
 
   return (
     <div className="app-container">
@@ -121,9 +170,15 @@ function App() {
           </select>
 
           <select
+
+            // Valor atual selecionado
             value={eventVagas}
+
+            // Atualiza o estado quando mudar
             onChange={(e) => setEventVagas(Number(e.target.value))}
           >
+
+              /* Opções disponíveis */
             <option value={10}>10 vagas</option>
             <option value={30}>30 vagas</option>
             <option value={50}>50 vagas</option>
@@ -146,10 +201,13 @@ function App() {
       </section>
 
       <section className="search-section">
+
+        /* Campo onde o usuário digita */
         <input
           type="text"
           placeholder="Buscar evento..."
           value={search}
+          // Atualiza o estado a cada tecla digitada
           onChange={(e) => setSearch(e.target.value)}
         />
       </section>
@@ -173,14 +231,18 @@ function App() {
                 {item.status === "Agendado"
                   ? "Iniciar"
                   : item.status === "Em Andamento"
-                  ? "Encerrar"
-                  : "Reiniciar"}
+                    ? "Encerrar"
+                    : "Reiniciar"}
               </button>
 
               <button
+              // Ao clicar chama a função
                 onClick={() => inscreverAluno(item.id)}
+                // Desabilita quando vagas chegar em 0
                 disabled={(item.vagas ?? 0) === 0}
               >
+
+                  /* Troca o texto automaticamente */
                 {(item.vagas ?? 0) === 0 ? "Esgotado" : "Inscrever"}
               </button>
 
